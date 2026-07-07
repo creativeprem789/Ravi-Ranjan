@@ -11,9 +11,9 @@ import Footer from './components/Footer';
 const videoProjects = [
   { id: 1, title: "Vlog Production Snippet", filename: "video3.mp4", category: "Social Reel" },
   { id: 2, title: "Quick Motion Reel Showcase", filename: "video4.mp4", category: "Music Video Cut" },
-  { id: 3, title: "Shorts Edit Showcase", youtubeId: "hHMJdwwqBdo", isYoutube: true, category: "Reel Edit" },
-  { id: 4, title: "Cinematic Travel Narrative", youtubeId: "eLjK_vVUdLs", isYoutube: true, category: "Brand Promo" },
-  { id: 5, title: "Lifestyle Shorts Edit", youtubeId: "v1EU33Q_cAI", isYoutube: true, category: "Reel Edit" }
+  { id: 3, title: "Creative music reel Edit", youtubeId: "hHMJdwwqBdo", isYoutube: true, category: "Reel Edit" },
+  { id: 4, title: "High-Quality Podcast Production", youtubeId: "eLjK_vVUdLs", isYoutube: true, category: "Brand Promo" },
+  { id: 5, title: "Meta Ad reel", youtubeId: "v1EU33Q_cAI", isYoutube: true, category: "Reel Edit" }
 ];
 
 const imageProjects = [

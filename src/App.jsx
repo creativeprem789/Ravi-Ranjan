@@ -8,13 +8,9 @@ import Toolkit from './components/Toolkit';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-// Portfolio project data matching assets in public/videos and public/images/work
 const videoProjects = [
-  { id: 1, title: "Cleanse & Glow Promo", filename: "video1.mp4", category: "Commercial Cut" },
-  { id: 2, title: "Short Reel Compilation", filename: "video2.mp4", category: "Reel Edit" },
-  { id: 3, title: "Vlog Production Snippet", filename: "video3.mp4", category: "Social Reel" },
-  { id: 4, title: "Quick Motion Reel Showcase", filename: "video4.mp4", category: "Music Video Cut" },
-  { id: 5, title: "Cinematic Travel Narrative", filename: "video5.mp4", category: "Brand Promo" }
+  { id: 1, title: "Vlog Production Snippet", filename: "video3.mp4", category: "Social Reel" },
+  { id: 2, title: "Quick Motion Reel Showcase", filename: "video4.mp4", category: "Music Video Cut" }
 ];
 
 const imageProjects = [

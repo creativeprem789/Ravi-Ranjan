@@ -31,6 +31,7 @@ html {
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 700;
+  font-size: 90%;
   letter-spacing: -0.01em;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

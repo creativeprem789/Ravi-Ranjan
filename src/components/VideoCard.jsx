@@ -8,8 +8,9 @@ export default function VideoCard({ project, num, onOpenLightbox }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  // Muted autoplay on desktop hover
+  // Muted autoplay on desktop hover (local videos only)
   const handleMouseEnter = () => {
+    if (project.isYoutube) return;
     if (!videoRef.current || hasError) return;
     videoRef.current.muted = true;
 
@@ -17,12 +18,13 @@ export default function VideoCard({ project, num, onOpenLightbox }) {
     if (playPromise !== undefined) {
       playPromise
         .then(() => setIsPlaying(true))
-        .catch((err) => console.warn("Muted autoplay blocked or interrupted:", err));
+        .catch((err) => console.warn("Muted autoplay blocked:", err));
     }
   };
 
-  // Pause on mouse exit
+  // Pause on mouse exit (local videos only)
   const handleMouseLeave = () => {
+    if (project.isYoutube) return;
     if (!videoRef.current || hasError) return;
     videoRef.current.pause();
     setIsPlaying(false);
@@ -31,6 +33,11 @@ export default function VideoCard({ project, num, onOpenLightbox }) {
   const handleVideoError = () => {
     setHasError(true);
   };
+
+  // YouTube high quality default thumbnail URL
+  const thumbnailUrl = project.isYoutube 
+    ? `https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg`
+    : null;
 
   return (
     <div 
@@ -56,7 +63,15 @@ export default function VideoCard({ project, num, onOpenLightbox }) {
         <div className="card-viewfinder-bracket bl"></div>
         <div className="card-viewfinder-bracket br"></div>
 
-        {hasError ? (
+        {project.isYoutube ? (
+          <img
+            src={thumbnailUrl}
+            alt={project.title}
+            className="video-card-element cinematic-img"
+            loading="lazy"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : hasError ? (
           <div className="video-fallback-box">
             <p className="video-fallback-text">
               Drop <strong>{project.filename}</strong> in <code>/public/videos</code> to preview.

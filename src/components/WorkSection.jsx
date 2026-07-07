@@ -97,21 +97,41 @@ export default function WorkSection({ type, title, projects }) {
             </button>
             
             {type === 'video' ? (
-              <video 
-                src={`/videos/${activeProject.filename}`} 
-                className="lightbox-video"
-                autoPlay
-                controls
-                loop
-                playsInline
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '75vh',
-                  borderRadius: '8px',
-                  border: '1px solid var(--line)',
-                  boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)'
-                }}
-              />
+              activeProject.isYoutube ? (
+                <iframe 
+                  src={`https://www.youtube.com/embed/${activeProject.youtubeId}?autoplay=1`}
+                  title={activeProject.title}
+                  className="lightbox-video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    width: '80vw',
+                    height: '45vw',
+                    maxWidth: '1000px',
+                    maxHeight: '562px',
+                    borderRadius: '8px',
+                    border: '1px solid var(--line)',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)'
+                  }}
+                />
+              ) : (
+                <video 
+                  src={`/videos/${activeProject.filename}`} 
+                  className="lightbox-video"
+                  autoPlay
+                  controls
+                  loop
+                  playsInline
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '75vh',
+                    borderRadius: '8px',
+                    border: '1px solid var(--line)',
+                    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)'
+                  }}
+                />
+              )
             ) : (
               <img 
                 src={`/images/work/${activeProject.filename}`} 

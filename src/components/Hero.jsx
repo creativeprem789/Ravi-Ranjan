@@ -60,7 +60,7 @@ export default function Hero() {
               <div className="hero-stat-label">Experience</div>
             </div>
             <div className="hero-stat-col">
-              <div className="hero-stat-num">5+</div>
+              <div className="hero-stat-num">50+</div>
               <div className="hero-stat-label">Projects Delivered</div>
             </div>
             <div className="hero-stat-col">
